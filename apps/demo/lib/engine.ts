@@ -160,29 +160,27 @@ function createProviders() {
   }
 }
 
-// --- Engine Singleton ---
+// --- Engine Singleton (survives Next.js HMR via globalThis) ---
 
-let engine: Engine | null = null
+const globalForEngine = globalThis as unknown as {
+  __engine?: Engine
+  __linkSuggestionQueue?: Array<{
+    sourceId: string
+    targetId: string
+    sourceSummary: string
+    targetSummary: string
+  }>
+}
 
-export const linkSuggestionQueue: Array<{
-  sourceId: string
-  targetId: string
-  sourceSummary: string
-  targetSummary: string
-}> = []
+export const linkSuggestionQueue = globalForEngine.__linkSuggestionQueue ??= []
 
 export function getEngine(): Engine {
-  if (!engine) {
+  if (!globalForEngine.__engine) {
     const providers = createProviders()
     console.log('[engine] Initializing database...')
-    let db: ReturnType<typeof createDatabase>
-    try {
-      db = createDatabase(':memory:')
-      console.log('[engine] Database created OK')
-    } catch (e) {
-      console.error('[engine] Database creation failed:', e)
-      throw e
-    }
+    const dbPath = process.env.DB_PATH || './demo.db'
+    const db = createDatabase(dbPath)
+    console.log(`[engine] Database created at ${dbPath}`)
 
     let store: SqliteStore
     try {
@@ -216,7 +214,7 @@ export function getEngine(): Engine {
       }
     }
 
-    engine = createEngine({
+    globalForEngine.__engine = createEngine({
       store,
       vectorSearch,
       keywordSearch,
@@ -228,5 +226,5 @@ export function getEngine(): Engine {
       },
     })
   }
-  return engine
+  return globalForEngine.__engine
 }

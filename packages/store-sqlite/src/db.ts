@@ -1,6 +1,11 @@
-import Database from 'better-sqlite3'
+import type DatabaseType from 'better-sqlite3'
 
-export function createDatabase(path: string = ':memory:'): Database.Database {
+// Use createRequire to bypass webpack bundling for native modules
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url)
+const Database = require('better-sqlite3') as new (path: string) => DatabaseType.Database
+
+export function createDatabase(path: string = ':memory:'): DatabaseType.Database {
   const db = new Database(path)
   db.pragma('journal_mode = WAL')
   db.pragma('foreign_keys = ON')

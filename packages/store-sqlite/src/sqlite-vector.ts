@@ -1,6 +1,8 @@
 import type Database from 'better-sqlite3'
-import * as sqliteVec from 'sqlite-vec'
 import type { VectorSearchProvider, SearchResult } from '@lang-context/core'
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url)
+const sqliteVec = require('sqlite-vec') as { load: (db: Database.Database) => void }
 
 export class SqliteVectorSearch implements VectorSearchProvider {
   constructor(

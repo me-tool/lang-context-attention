@@ -6,3 +6,5 @@ dist/
 *.sqlite
 .env
 .env.local
+*.db-shm
+*.db-wal
