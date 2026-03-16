@@ -1,5 +1,5 @@
 import type Database from 'better-sqlite3'
-import type { VectorSearchProvider, SearchResult } from '@lang-context/core'
+import type { VectorSearchProvider, SearchResult } from '@llm-context/core'
 import { createRequire } from 'node:module'
 const require = createRequire(import.meta.url)
 const sqliteVec = require('sqlite-vec') as { load: (db: Database.Database) => void }

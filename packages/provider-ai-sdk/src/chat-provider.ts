@@ -1,5 +1,5 @@
 import { generateText, streamText } from 'ai'
-import type { ChatProvider, ChatMessage } from '@lang-context/core'
+import type { ChatProvider, ChatMessage } from '@llm-context/core'
 import type { LanguageModel } from 'ai'
 
 export class AiSdkChatProvider implements ChatProvider {

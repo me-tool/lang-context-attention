@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { RoutingDecision } from '@lang-context/core'
+import type { RoutingDecision } from '@llm-context/core'
 
 interface DebugState {
   currentRoutingDecision: RoutingDecision | null

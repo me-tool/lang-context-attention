@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@lang-context/core"><img src="https://img.shields.io/npm/v/@lang-context/core?style=flat-square&color=6366f1&label=core" alt="npm core"/></a>
-  <a href="https://www.npmjs.com/package/@lang-context/store-sqlite"><img src="https://img.shields.io/npm/v/@lang-context/store-sqlite?style=flat-square&color=06b6d4&label=store-sqlite" alt="npm store"/></a>
-  <a href="https://www.npmjs.com/package/@lang-context/provider-ai-sdk"><img src="https://img.shields.io/npm/v/@lang-context/provider-ai-sdk?style=flat-square&color=f59e0b&label=provider-ai-sdk" alt="npm provider"/></a>
+  <a href="https://www.npmjs.com/package/@llm-context/core"><img src="https://img.shields.io/npm/v/@llm-context/core?style=flat-square&color=6366f1&label=core" alt="npm core"/></a>
+  <a href="https://www.npmjs.com/package/@llm-context/store-sqlite"><img src="https://img.shields.io/npm/v/@llm-context/store-sqlite?style=flat-square&color=06b6d4&label=store-sqlite" alt="npm store"/></a>
+  <a href="https://www.npmjs.com/package/@llm-context/provider-ai-sdk"><img src="https://img.shields.io/npm/v/@llm-context/provider-ai-sdk?style=flat-square&color=f59e0b&label=provider-ai-sdk" alt="npm provider"/></a>
   <img src="https://img.shields.io/badge/tests-43%20passing-10b981?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/license-MIT-e2e8f0?style=flat-square" alt="license"/>
 </p>
@@ -58,11 +58,11 @@ LCA automatically clusters messages by topic and routes each request to only the
 
 ```bash
 # Install
-pnpm add @lang-context/core @lang-context/store-sqlite @lang-context/provider-ai-sdk
+pnpm add @llm-context/core @llm-context/store-sqlite @llm-context/provider-ai-sdk
 
 # Or run the demo
-git clone https://github.com/me-tool/lang-context-attention.git
-cd lang-context-attention
+git clone https://github.com/me-tool/llm-context-attention.git
+cd llm-context-attention
 pnpm install && pnpm build
 cd apps/demo && pnpm dev
 ```
@@ -83,9 +83,9 @@ apps/
 Every component is replaceable via clean interfaces:
 
 ```typescript
-import { createEngine } from '@lang-context/core'
-import { SqliteStore, SqliteVectorSearch, SqliteKeywordSearch, createDatabase } from '@lang-context/store-sqlite'
-import { AiSdkChatProvider, AiSdkJudgeProvider, AiSdkEmbeddingProvider } from '@lang-context/provider-ai-sdk'
+import { createEngine } from '@llm-context/core'
+import { SqliteStore, SqliteVectorSearch, SqliteKeywordSearch, createDatabase } from '@llm-context/store-sqlite'
+import { AiSdkChatProvider, AiSdkJudgeProvider, AiSdkEmbeddingProvider } from '@llm-context/provider-ai-sdk'
 import { openai } from '@ai-sdk/openai'
 
 const db = createDatabase('./conversations.db')
@@ -180,9 +180,9 @@ cd apps/demo && pnpm dev
 pnpm test   # 43 tests across all packages
 
 # By package
-pnpm --filter @lang-context/core test          # 18 tests (router, context, engine integration)
-pnpm --filter @lang-context/store-sqlite test   # 22 tests (CRUD, vector search, keyword search)
-pnpm --filter @lang-context/provider-ai-sdk test # 3 tests (judge prompt, structured output)
+pnpm --filter @llm-context/core test          # 18 tests (router, context, engine integration)
+pnpm --filter @llm-context/store-sqlite test   # 22 tests (CRUD, vector search, keyword search)
+pnpm --filter @llm-context/provider-ai-sdk test # 3 tests (judge prompt, structured output)
 ```
 
 Integration tests verify multi-round routing:
@@ -227,11 +227,11 @@ LCA 自动将消息按主题聚类，每次请求只组装相关主题的上下�
 
 ```bash
 # 安装依赖
-pnpm add @lang-context/core @lang-context/store-sqlite @lang-context/provider-ai-sdk
+pnpm add @llm-context/core @llm-context/store-sqlite @llm-context/provider-ai-sdk
 
 # 或直接运行 Demo
-git clone https://github.com/me-tool/lang-context-attention.git
-cd lang-context-attention
+git clone https://github.com/me-tool/llm-context-attention.git
+cd llm-context-attention
 pnpm install && pnpm build
 cd apps/demo && pnpm dev
 # 打开 http://localhost:3000

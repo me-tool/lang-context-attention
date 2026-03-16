@@ -6,7 +6,7 @@ import type {
   Message,
   QuestionLink,
   RoutingDecision,
-} from '@lang-context/core'
+} from '@llm-context/core'
 
 export class SqliteStore implements StoreProvider {
   constructor(private db: Database.Database) {}

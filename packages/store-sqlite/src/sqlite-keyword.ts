@@ -1,5 +1,5 @@
 import type Database from 'better-sqlite3'
-import type { KeywordSearchProvider, SearchResult } from '@lang-context/core'
+import type { KeywordSearchProvider, SearchResult } from '@llm-context/core'
 
 export class SqliteKeywordSearch implements KeywordSearchProvider {
   constructor(private db: Database.Database) {

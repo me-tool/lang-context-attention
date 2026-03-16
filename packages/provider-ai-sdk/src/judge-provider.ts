@@ -1,6 +1,6 @@
 import { generateObject } from 'ai'
 import { z } from 'zod'
-import type { JudgeProvider, JudgeContext, JudgeResult } from '@lang-context/core'
+import type { JudgeProvider, JudgeContext, JudgeResult } from '@llm-context/core'
 import type { LanguageModel } from 'ai'
 
 const DEFAULT_JUDGE_TEMPLATE = `You are a conversation topic classifier. Given a user's new message and a list of

@@ -2,7 +2,7 @@
 
 import { Badge, Button } from 'antd'
 import { MessageOutlined } from '@ant-design/icons'
-import type { RootQuestion } from '@lang-context/core'
+import type { RootQuestion } from '@llm-context/core'
 import { getTopicColor } from '@/lib/colors'
 
 interface Props {

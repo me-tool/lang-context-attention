@@ -1,4 +1,4 @@
-import { createEngine, type Engine } from '@lang-context/core'
+import { createEngine, type Engine } from '@llm-context/core'
 import type {
   ChatProvider,
   JudgeProvider,
@@ -6,8 +6,8 @@ import type {
   ChatMessage,
   JudgeContext,
   JudgeResult,
-} from '@lang-context/core'
-import { createDatabase, SqliteStore, SqliteVectorSearch, SqliteKeywordSearch } from '@lang-context/store-sqlite'
+} from '@llm-context/core'
+import { createDatabase, SqliteStore, SqliteVectorSearch, SqliteKeywordSearch } from '@llm-context/store-sqlite'
 
 // --- Embedding dimensions ---
 const EMBEDDING_DIMENSIONS = 384
@@ -135,7 +135,7 @@ function createProviders() {
   if (useRealLLM) {
     // Dynamic import to avoid build errors when packages aren't configured
     try {
-      const { AiSdkChatProvider, AiSdkJudgeProvider, AiSdkEmbeddingProvider } = require('@lang-context/provider-ai-sdk')
+      const { AiSdkChatProvider, AiSdkJudgeProvider, AiSdkEmbeddingProvider } = require('@llm-context/provider-ai-sdk')
       const { openai } = require('@ai-sdk/openai')
 
       return {
@@ -201,7 +201,7 @@ export function getEngine(): Engine {
     }
 
     // sqlite-vec may fail to load in some environments
-    let vectorSearch: import('@lang-context/core').VectorSearchProvider
+    let vectorSearch: import('@llm-context/core').VectorSearchProvider
     try {
       vectorSearch = new SqliteVectorSearch(db, providers.embeddingDimensions)
     } catch (e) {

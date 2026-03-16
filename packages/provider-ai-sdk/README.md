@@ -1,9 +1,9 @@
-# @lang-context/provider-ai-sdk
+# @llm-context/provider-ai-sdk
 
 [Vercel AI SDK](https://sdk.vercel.ai/) providers for **Lang Context Attention** — connects the routing engine to OpenAI, Anthropic, Google, and 20+ LLM providers.
 
 <p>
-  <a href="https://github.com/me-tool/lang-context-attention"><img src="https://img.shields.io/badge/GitHub-lang--context--attention-6366f1?style=flat-square&logo=github" alt="GitHub"/></a>
+  <a href="https://github.com/me-tool/llm-context-attention"><img src="https://img.shields.io/badge/GitHub-lang--context--attention-6366f1?style=flat-square&logo=github" alt="GitHub"/></a>
   <img src="https://img.shields.io/badge/tests-3%20passing-10b981?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/license-MIT-e2e8f0?style=flat-square" alt="license"/>
 </p>
@@ -19,7 +19,7 @@
 ## Install
 
 ```bash
-pnpm add @lang-context/core @lang-context/provider-ai-sdk ai @ai-sdk/openai
+pnpm add @llm-context/core @llm-context/provider-ai-sdk ai @ai-sdk/openai
 ```
 
 Replace `@ai-sdk/openai` with your preferred provider:
@@ -31,8 +31,8 @@ Replace `@ai-sdk/openai` with your preferred provider:
 ## Quick Start
 
 ```typescript
-import { createEngine } from '@lang-context/core'
-import { AiSdkChatProvider, AiSdkJudgeProvider, AiSdkEmbeddingProvider } from '@lang-context/provider-ai-sdk'
+import { createEngine } from '@llm-context/core'
+import { AiSdkChatProvider, AiSdkJudgeProvider, AiSdkEmbeddingProvider } from '@llm-context/provider-ai-sdk'
 import { openai } from '@ai-sdk/openai'
 
 const engine = createEngine({
@@ -57,7 +57,7 @@ const engine = createEngine({
 Handles main conversation and summary generation.
 
 ```typescript
-import { AiSdkChatProvider } from '@lang-context/provider-ai-sdk'
+import { AiSdkChatProvider } from '@llm-context/provider-ai-sdk'
 import { openai } from '@ai-sdk/openai'
 
 const chat = new AiSdkChatProvider(openai('gpt-4o'))
@@ -79,7 +79,7 @@ for await (const chunk of chat.streamChat(messages)) {
 Classifies messages into topics using structured JSON output (guaranteed by zod schema).
 
 ```typescript
-import { AiSdkJudgeProvider } from '@lang-context/provider-ai-sdk'
+import { AiSdkJudgeProvider } from '@llm-context/provider-ai-sdk'
 import { openai } from '@ai-sdk/openai'
 
 const judge = new AiSdkJudgeProvider({
@@ -121,7 +121,7 @@ const judge = new AiSdkJudgeProvider({
 Generates vector embeddings for semantic similarity search.
 
 ```typescript
-import { AiSdkEmbeddingProvider } from '@lang-context/provider-ai-sdk'
+import { AiSdkEmbeddingProvider } from '@llm-context/provider-ai-sdk'
 import { openai } from '@ai-sdk/openai'
 
 const embedding = new AiSdkEmbeddingProvider({

@@ -1,9 +1,9 @@
 {
-  "name": "@lang-context/core",
+  "name": "@llm-context/core",
   "version": "0.1.1",
   "description": "Topic-aware context routing engine for LLM conversations. Auto-clusters messages by topic, assembles only relevant context using hybrid retrieval (vector + BM25 + RRF) and LLM judgment.",
   "type": "module",
-  "homepage": "https://github.com/me-tool/lang-context-attention#readme",
+  "homepage": "https://github.com/me-tool/llm-context-attention#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -28,7 +28,7 @@
   "files": ["dist", "package.json", "README.md"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/me-tool/lang-context-attention",
+    "url": "https://github.com/me-tool/llm-context-attention",
     "directory": "packages/core"
   },
   "license": "MIT",

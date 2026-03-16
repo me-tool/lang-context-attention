@@ -1,5 +1,5 @@
 import { embed } from 'ai'
-import type { EmbeddingProvider } from '@lang-context/core'
+import type { EmbeddingProvider } from '@llm-context/core'
 import type { EmbeddingModel } from 'ai'
 
 export class AiSdkEmbeddingProvider implements EmbeddingProvider {

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Dropdown, type MenuProps } from 'antd'
 import { UserOutlined, RobotOutlined } from '@ant-design/icons'
-import type { Message } from '@lang-context/core'
+import type { Message } from '@llm-context/core'
 import { useUiStore } from '@/stores/ui'
 import { useSessionStore } from '@/stores/session'
 import { useDebugStore } from '@/stores/debug'

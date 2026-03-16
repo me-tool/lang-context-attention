@@ -1,5 +1,5 @@
 {
-  "name": "@lang-context/demo",
+  "name": "@llm-context/demo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@lang-context/core": "workspace:*",
-    "@lang-context/store-sqlite": "workspace:*",
-    "@lang-context/provider-ai-sdk": "workspace:*",
+    "@llm-context/core": "workspace:*",
+    "@llm-context/store-sqlite": "workspace:*",
+    "@llm-context/provider-ai-sdk": "workspace:*",
     "next": "^15.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

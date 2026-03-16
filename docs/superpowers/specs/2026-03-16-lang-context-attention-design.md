@@ -41,7 +41,7 @@ User Message
 ## Project Structure (Monorepo)
 
 ```
-lang-context-attention/
+llm-context-attention/
 ├── packages/
 │   ├── core/                    # Routing engine SDK
 │   │   ├── src/

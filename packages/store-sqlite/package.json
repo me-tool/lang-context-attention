@@ -1,9 +1,9 @@
 {
-  "name": "@lang-context/store-sqlite",
+  "name": "@llm-context/store-sqlite",
   "version": "0.1.1",
   "description": "SQLite storage provider for Lang Context Attention — persistence, vector search (sqlite-vec), and BM25 keyword search (FTS5) in a single file database.",
   "type": "module",
-  "homepage": "https://github.com/me-tool/lang-context-attention#readme",
+  "homepage": "https://github.com/me-tool/llm-context-attention#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
@@ -19,7 +19,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@lang-context/core": "workspace:*",
+    "@llm-context/core": "workspace:*",
     "better-sqlite3": "^11.7.0",
     "sqlite-vec": "^0.1.6"
   },
@@ -31,7 +31,7 @@
   "files": ["dist", "package.json", "README.md"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/me-tool/lang-context-attention",
+    "url": "https://github.com/me-tool/llm-context-attention",
     "directory": "packages/store-sqlite"
   },
   "license": "MIT",

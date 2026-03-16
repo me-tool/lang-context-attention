@@ -1,9 +1,9 @@
-# @lang-context/core
+# @llm-context/core
 
 Core engine for **Lang Context Attention** — a topic-aware context routing system for LLM conversations.
 
 <p>
-  <a href="https://github.com/me-tool/lang-context-attention"><img src="https://img.shields.io/badge/GitHub-lang--context--attention-6366f1?style=flat-square&logo=github" alt="GitHub"/></a>
+  <a href="https://github.com/me-tool/llm-context-attention"><img src="https://img.shields.io/badge/GitHub-lang--context--attention-6366f1?style=flat-square&logo=github" alt="GitHub"/></a>
   <img src="https://img.shields.io/badge/tests-18%20passing-10b981?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/license-MIT-e2e8f0?style=flat-square" alt="license"/>
 </p>
@@ -22,13 +22,13 @@ The result: focused LLM responses with ~50% token savings.
 ## Install
 
 ```bash
-pnpm add @lang-context/core
+pnpm add @llm-context/core
 ```
 
 ## Quick Start
 
 ```typescript
-import { createEngine } from '@lang-context/core'
+import { createEngine } from '@llm-context/core'
 
 const engine = createEngine({
   store: yourStoreProvider,          // Where to persist data
@@ -64,13 +64,13 @@ Use these companion packages for zero-config setup:
 
 | Package | Description |
 |---------|-------------|
-| [`@lang-context/store-sqlite`](https://www.npmjs.com/package/@lang-context/store-sqlite) | SQLite storage + sqlite-vec vector search + FTS5 keyword search |
-| [`@lang-context/provider-ai-sdk`](https://www.npmjs.com/package/@lang-context/provider-ai-sdk) | Vercel AI SDK providers (OpenAI, Anthropic, etc.) |
+| [`@llm-context/store-sqlite`](https://www.npmjs.com/package/@llm-context/store-sqlite) | SQLite storage + sqlite-vec vector search + FTS5 keyword search |
+| [`@llm-context/provider-ai-sdk`](https://www.npmjs.com/package/@llm-context/provider-ai-sdk) | Vercel AI SDK providers (OpenAI, Anthropic, etc.) |
 
 ```typescript
-import { createEngine } from '@lang-context/core'
-import { createDatabase, SqliteStore, SqliteVectorSearch, SqliteKeywordSearch } from '@lang-context/store-sqlite'
-import { AiSdkChatProvider, AiSdkJudgeProvider, AiSdkEmbeddingProvider } from '@lang-context/provider-ai-sdk'
+import { createEngine } from '@llm-context/core'
+import { createDatabase, SqliteStore, SqliteVectorSearch, SqliteKeywordSearch } from '@llm-context/store-sqlite'
+import { AiSdkChatProvider, AiSdkJudgeProvider, AiSdkEmbeddingProvider } from '@llm-context/provider-ai-sdk'
 import { openai } from '@ai-sdk/openai'
 
 const db = createDatabase('./conversations.db')
@@ -157,7 +157,7 @@ interface JudgeProvider { judge }
 interface EmbeddingProvider { embed, dimensions }
 ```
 
-Full interface definitions: [interfaces.ts](https://github.com/me-tool/lang-context-attention/blob/main/packages/core/src/interfaces.ts)
+Full interface definitions: [interfaces.ts](https://github.com/me-tool/llm-context-attention/blob/main/packages/core/src/interfaces.ts)
 
 ## Routing Flow
 
@@ -165,7 +165,7 @@ Full interface definitions: [interfaces.ts](https://github.com/me-tool/lang-cont
 User Message → Embed → [Vector Search ∥ Keyword Search] → RRF Fusion → LLM Judge → Context Assembly → Stream Response
 ```
 
-See the [design spec](https://github.com/me-tool/lang-context-attention/blob/main/docs/superpowers/specs/2026-03-16-lang-context-attention-design.md) for full architecture details.
+See the [design spec](https://github.com/me-tool/llm-context-attention/blob/main/docs/superpowers/specs/2026-03-16-llm-context-attention-design.md) for full architecture details.
 
 ## License
 

@@ -1,9 +1,9 @@
-# @lang-context/store-sqlite
+# @llm-context/store-sqlite
 
 SQLite storage provider for **Lang Context Attention** — provides persistence, vector search, and keyword search out of the box.
 
 <p>
-  <a href="https://github.com/me-tool/lang-context-attention"><img src="https://img.shields.io/badge/GitHub-lang--context--attention-6366f1?style=flat-square&logo=github" alt="GitHub"/></a>
+  <a href="https://github.com/me-tool/llm-context-attention"><img src="https://img.shields.io/badge/GitHub-lang--context--attention-6366f1?style=flat-square&logo=github" alt="GitHub"/></a>
   <img src="https://img.shields.io/badge/tests-22%20passing-10b981?style=flat-square" alt="tests"/>
   <img src="https://img.shields.io/badge/license-MIT-e2e8f0?style=flat-square" alt="license"/>
 </p>
@@ -20,14 +20,14 @@ SQLite storage provider for **Lang Context Attention** — provides persistence,
 ## Install
 
 ```bash
-pnpm add @lang-context/core @lang-context/store-sqlite
+pnpm add @llm-context/core @llm-context/store-sqlite
 ```
 
 ## Quick Start
 
 ```typescript
-import { createEngine } from '@lang-context/core'
-import { createDatabase, SqliteStore, SqliteVectorSearch, SqliteKeywordSearch } from '@lang-context/store-sqlite'
+import { createEngine } from '@llm-context/core'
+import { createDatabase, SqliteStore, SqliteVectorSearch, SqliteKeywordSearch } from '@llm-context/store-sqlite'
 
 // Create database (file-based or in-memory)
 const db = createDatabase('./conversations.db')  // persistent
@@ -51,7 +51,7 @@ const engine = createEngine({
 Creates and initializes a SQLite database with all required tables and indexes.
 
 ```typescript
-import { createDatabase } from '@lang-context/store-sqlite'
+import { createDatabase } from '@llm-context/store-sqlite'
 
 const db = createDatabase('./data.db')
 ```
@@ -70,7 +70,7 @@ const db = createDatabase('./data.db')
 Full `StoreProvider` implementation with 15 methods covering all CRUD operations.
 
 ```typescript
-import { SqliteStore } from '@lang-context/store-sqlite'
+import { SqliteStore } from '@llm-context/store-sqlite'
 
 const store = new SqliteStore(db)
 
@@ -104,7 +104,7 @@ await store.deleteLink(linkId)
 Vector similarity search powered by [sqlite-vec](https://github.com/asg017/sqlite-vec).
 
 ```typescript
-import { SqliteVectorSearch } from '@lang-context/store-sqlite'
+import { SqliteVectorSearch } from '@llm-context/store-sqlite'
 
 const vectorSearch = new SqliteVectorSearch(db, 1536)  // dimensions must match your embedding model
 
@@ -121,7 +121,7 @@ await vectorSearch.delete('topic-id')
 BM25 keyword search powered by SQLite FTS5.
 
 ```typescript
-import { SqliteKeywordSearch } from '@lang-context/store-sqlite'
+import { SqliteKeywordSearch } from '@llm-context/store-sqlite'
 
 const keywordSearch = new SqliteKeywordSearch(db)
 

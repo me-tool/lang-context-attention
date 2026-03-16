@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { Session, RootQuestion, Message } from '@lang-context/core'
+import type { Session, RootQuestion, Message } from '@llm-context/core'
 
 interface LinkSuggestion {
   sourceId: string

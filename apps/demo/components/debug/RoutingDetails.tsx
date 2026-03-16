@@ -1,7 +1,7 @@
 'use client'
 
 import { Collapse, Typography, Table, Tag } from 'antd'
-import type { RoutingDecision } from '@lang-context/core'
+import type { RoutingDecision } from '@llm-context/core'
 import { useDebugStore } from '@/stores/debug'
 
 const { Text, Paragraph } = Typography

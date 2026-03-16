@@ -1,5 +1,5 @@
 {
-  "name": "lang-context-attention",
+  "name": "llm-context-attention",
   "private": true,
   "scripts": {
     "build": "turbo run build",
